@@ -11,8 +11,7 @@
       },
       "ios": {
         "simulator": true
-      },
-      "installCommand": "npm install --legacy-peer-deps"
+      }
     },
     "preview": {
       "distribution": "internal",
@@ -21,8 +20,7 @@
       },
       "ios": {
         "simulator": false
-      },
-      "installCommand": "npm install --legacy-peer-deps"
+      }
     },
     "production": {
       "distribution": "store",
@@ -31,8 +29,7 @@
       },
       "ios": {
         "simulator": false
-      },
-      "installCommand": "npm install --legacy-peer-deps"
+      }
     }
   },
   "submit": {
