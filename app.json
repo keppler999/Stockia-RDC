@@ -95,7 +95,8 @@
         "expo-build-properties",
         {
           "android": {
-            "usesCleartextTraffic": true
+            "usesCleartextTraffic": true,
+            "extraBuildProperties": "org.gradle.internal.allowInsecureProtocol=true"
           },
           "ios": {
             "deploymentTarget": "13.0"
