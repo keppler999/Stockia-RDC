@@ -22,9 +22,6 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# === NATIVE (Auto-généré par Expo) ===
-android/
-ios/
 
 # === BUILD & SIGNATURE ===
 *.apk
