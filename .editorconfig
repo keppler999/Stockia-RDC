@@ -1,0 +1,31 @@
+# http://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Fichiers JavaScript, TypeScript et JSON (Standard Expo/Prettier)
+[*.{js,jsx,ts,tsx,json,json5,jsonc}]
+indent_style = space
+indent_size = 2
+
+# Fichiers de configuration spécifiques
+[*.{yml,yaml,html,htm,css,scss,sass,sh,bash,xml,xsd,xsl,properties,props}]
+indent_style = space
+indent_size = 2
+
+# Fichiers MarkDown (Ne pas supprimer les espaces en fin de ligne pour les sauts de ligne MD)
+[*.md]
+trim_trailing_whitespace = false
+
+# Fichiers Python (Indentation standard 4 espaces)
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Fichiers Makefile (Doivent utiliser des tabulations réelles)
+[Makefile]
+indent_style = tab

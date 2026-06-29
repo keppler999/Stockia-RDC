@@ -1,39 +1,81 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# ============================================
+# 📁 GITIGNORE - STOCKIA
+# ============================================
 
-# dependencies
-node_modules/
-
-# Expo
+# === EXPO & REACT NATIVE ===
 .expo/
 dist/
 web-build/
-expo-env.d.ts
+.expo-shared/
+.expo-freestyle/
+.expo-metro/
+.expo/types/
+.expo/web/
 
-# Native
-.kotlin/
-*.orig.*
+# === NODE ===
+node_modules/
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.pnpm-debug.*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# === NATIVE (Auto-généré par Expo) ===
+android/
+ios/
+
+# === BUILD & SIGNATURE ===
+*.apk
+*.aab
+*.ipa
+*.hprof
+*.keystore
 *.jks
 *.p8
 *.p12
 *.key
 *.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
+*.cert
+*.csr
 *.pem
+build/
 
-# local env files
-.env*.local
+# === OS & IDE ===
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+*.iml
+.zed/
 
-# typescript
-*.tsbuildinfo
+# === ENV & SECRETS ===
+.env
+.env.*.local
+.env.development
+.env.production
+.env.test
 
-app-example
+# === LOGS ===
+*.log
+logs/
+
+# === TESTS & COVERAGE ===
+coverage/
+.nyc_output/
+*.test.js
+*.test.ts
+*.spec.js
+
+# === TEMPORARY & BACKUP ===
+tmp/
+temp/
+.cache/
+*.bak
+*.backup
+*.orig
+
+# === EXPO BUILD (EAS) ===
+.eas/ 

@@ -1,42 +1,120 @@
 {
   "expo": {
-    "name": "BlueDeep",
-    "slug": "BlueDeep",
-    "version": "1.0.0",
+    "name": "Stockia",
+    "slug": "stockia",
+    "version": "2.1.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "bluedeep",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F5F5F5",
+    "primaryColor": "#1565C0",
+    "description": "Gestion Commerciale Intelligente - Solution de caisse et gestion de stock hors-ligne",
+    "githubUrl": "https://github.com/eric-888/stockia",
+    "privacy": "unlisted",
+
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1565C0"
     },
+
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "cd.spiraleagence.stockia",
+      "buildNumber": "1",
+      "icon": "./assets/icon-ios.png",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "Stockia utilise le Bluetooth pour imprimer les tickets de caisse.",
+        "NSBluetoothPeripheralUsageDescription": "Stockia a besoin d'accéder au Bluetooth pour connecter l'imprimante.",
+        "NSCameraUsageDescription": "Stockia utilise la caméra pour scanner les codes-barres.",
+        "NSFaceIDUsageDescription": "Stockia utilise Face ID pour une connexion rapide et sécurisée.",
+        "NSLocalNetworkUsageDescription": "Stockia a besoin d'accéder au réseau local pour l'imprimante.",
+        "UIBackgroundModes": ["bluetooth-central"]
+      }
+    },
+
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1565C0"
       },
-      "edgeToEdgeEnabled": true
+      "package": "cd.spiraleagence.stockia",
+      "versionCode": 3,
+      "icon": "./assets/icon-android.png",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.VIBRATE",
+        "android.permission.POST_NOTIFICATIONS"
+      ],
+      "minSdkVersion": 23,
+      "targetSdkVersion": 33,
+      "softwareKeyboardLayoutMode": "pan",
+      "allowBackup": true
     },
+
     "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "Stockia",
+      "shortName": "Stockia",
+      "lang": "fr",
+      "display": "standalone",
+      "themeColor": "#1565C0",
+      "description": "Gestion Commerciale Intelligente",
+      "startUrl": "/",
+      "orientation": "portrait"
     },
+
     "plugins": [
-      "expo-router",
       [
-        "expo-splash-screen",
+        "expo-local-authentication",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "faceIDPermission": "Stockia utilise Face ID pour une connexion rapide et sécurisée."
+        }
+      ],
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Stockia a besoin d'accéder à la caméra pour scanner les codes-barres."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          },
+          "ios": {
+            "deploymentTarget": "13.0"
+          }
         }
       ]
     ],
-    "experiments": {
-      "typedRoutes": true
+
+    "extra": {
+      "apiUrl": "https://api.stockia.com",
+      "supportEmail": "support@spiraleagence.com"
+    },
+
+    "updates": {
+      "enabled": false
+    },
+
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
